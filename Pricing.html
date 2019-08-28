@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rida</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <link href="css/font.css" rel="stylesheet">
+</head>
+<script>
+  function toggle() {
+    var element = document.getElementById("lay");
+    element.classList.toggle("sidenav-toggle");
+  }
+
+  function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    document.getElementById(tabName).style.display = "block";
+  }
+
+
+  $(document).ready(function () {
+    $(".option").click(function () {
+      $(".option").removeClass("selected")
+      $(this).addClass("selected")
+    })
+
+    $(".sidenav ul li").click(function(){
+      $(".sidenav ul li").removeClass("picked")
+      $(this).addClass("picked")
+    })
+  })
+
+</script>
+
+<body>
+  <div class="nav flex">
+    <div class="right-box">
+      <ul>
+        <li class="list list-one" onclick="toggle();">
+          <img src="assets/images/bar.svg" width="20px" height="20px" />
+        </li>
+      </ul>
+      <div style="margin-right: 20px">
+        <img src="assets/images/logo.png" width="153px" height="50px" />
+      </div>
+      <ul>
+        <li class="list  list-two">
+          <div class="addcity"><img src="assets/images/plus.svg" /><span>Add new City</span>
+          </div>
+        </li>
+        <li class="list">Report Bug
+        </li>
+      </ul>
+    </div>
+    <div class="left-box">
+      <ul>
+        <li class="list list-one">
+          <img src="assets/images/message.svg">
+        </li>
+        <li class="list list-two">
+
+            <a href="#" class="notification">
+                <span><img src="assets/images/bell.svg"></span>
+                <span class="badge">3</span>
+              </a>
+          
+        </li>
+        <li class="location list list-three">
+          <div>
+            <img src="assets/images/location.svg"><span>Thailand</span>
+          </div>
+        </li>
+        <li class="list">
+        
+          <div class="Mask-flex">
+          <div class="Mask">J</div>
+          <div class="profile-name">
+            <div>
+              Helmut Krause
+            </div>
+              
+            </div>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex" id="lay">
+    <div class="sidenav" id="sidenav">
+      <ul>
+        <li class="picked">
+          <a>
+            <div class="flex-sidenav">
+              <div>
+                <img src="assets/images/tachometer-alt-solid.svg">
+              </div>
+              <div> <span>BGA</span></div>
+              <!-- <div ><span><img src="assets/images/sort-down-solid.svg"></span></div> -->
+            </div>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/list-alt-regular.svg">
+            </div>
+            <span>MASTERS LISTS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/book-open-solid.svg">
+            </div>
+            <span>AGA</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/message (copy).svg">
+            </div>
+            <span>AGA MASTERDATA</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/building (copy).svg">
+            </div>
+            <span>FINANCE</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/hand-holding-usd-solid.svg">
+            </div>
+            <span>HR</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/file-alt-regular.svg">
+            </div>
+            <span>STATISTICS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/badge (copy).svg">
+            </div>
+            <span>HOT DATES</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <div>
+              <img src="assets/images/edit-regular (1).svg">
+            </div>
+            <span>REMARKS</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="layout">
+      <div class="header">
+
+        <img src="assets/images/arrow.svg" /><span>BGA/Quotation/Pricing</span>
+        <p> <span><b> Pricing</b></span></p>
+      </div>
+      <div class="layout-menu">
+        <div class="row">
+          <div class="col-3 create-quotation option" onclick="openTab('Quotation')">Create Quotation
+          </div>
+          <div class="col-3 itinerary-manger option" onclick="openTab('Itinerary')">Itinerary Manager
+          </div>
+          <div class="col-3 pricing selected option" onclick="openTab('Pricing')">Pricing</div>
+          <div class="col-3 offer-letter option" onclick="openTab('Offer')">Offer Letter Generation</div>
+        </div>
+      </div>
+
+ 
+      <!-------------------------------------------Itineary------------------------------------------------------------------>   
+
+      <div id="Itinerary" class="tab" style="display:none">
+        <div class="container-fluid">
+          <div class="row trash-edit" style="margin:0 4.7%;margin-top: 3%">
+            <div class="col-2">
+              <div class="rectangle">503401 - 01</div>
+              <div class="rectangle-toggle">503401 - 02</div>
+            </div>
+            <div class="col-8"></div>
+            <div class="col-1 edit" style=" text-align: right;
+            margin-left:-5px;
+            cursor:pointer">
+              <img src="assets/images/edit-regular (1).svg" width="20px" height="20px" />
+            </div>
+            <div class="col-1 trash" styel=" text-align: right;
+            margin-left:60px;
+            cursor:pointer" >
+              <img src="assets/images/trash-alt-solid (1).svg" width="20px" height="20px" />
+            </div>
+          </div>
+          <div class="row duration-table" style="margin: 0% 5%">
+            <table class="col-12" style="text-align: center;margin: 0 1%">
+              <thead>
+                <tr class="table-row1">
+                  <td width="210px">Agent</td>
+                  <td width="153px">PIC</td>
+                  <td>Duration</td>
+                  <td>Pattern 1</td>
+                  <td>Pattern 2</td>
+                  <td>Start</td>
+                  <td>End</td>
+                  <td>Departure</td>
+                  <td>Quoter</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-row2">
+                  <td>Quality</td>
+                  <td>Mrs.Plasom</td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>10 days</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>DE</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>SUM</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>FRA</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>BER</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>20JUL19 - 30SEP19</td>
+                  <td>Second Day</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row" style="margin: 1% 6%"><b>Itinerary brief : 503401 - 01</b>
+          </div>
+          <div class="row hr" style="margin: 1% 6%"></div>
+        </div>
+
+        <div class="row duration-table-manager" style="margin: 1% 6%">
+            <table class="col-12" style="margin: 0 1%">
+              <thead>
+                <tr class="table-row1">
+                <td width="79px">Position</td>
+                <td width="69px">Date</td>
+                <td width="194px">City</td>
+                <td width="95px">Time</td>
+                <td width="335px">Service</td>
+                <td width="252px" >Details</td>
+                <td>
+               
+                </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-row2">
+                 <td>001</td>
+                 <td>Day 2</td>
+                 <td>Frankfrut</td>
+                 <td>12:45 PM</td>
+                 <td>Start LDC Road tolls are included in the main package price. NO DIRECT PAYMENT TO THE DRIVER IS REQUIRED FOR THESE SERVICES. Parking fees and city permits are not included and MUST be paid by the Tour Leader directly to the driver. The Tour Leader must take care of the meals for the driver.</td>
+                 <td class="details">Pick‐Up Frankfurt Airport Flight
+                    CI61 @14:45</td>
+                 <td>
+                    <div class="flex">
+                        <img src="assets/images/unlock-alt-solid.svg" width="15px" height="15px"/>
+                        <img src="assets/images/edit-regular (1) (copy).svg" width="15px" height="15px"/>
+                        <img src="assets/images/trash-alt-solid (1).svg" width="15px" height="15px"/>
+                        </div>
+                 </td>
+                </tr>
+
+                <tr class="table-row2">
+                    <td>001</td>
+                    <td>Day 2</td>
+                    <td>Frankfrut</td>
+                    <td>12:45 PM</td>
+                    <td>Start LDC Road tolls are included in the main package price. NO DIRECT PAYMENT TO THE DRIVER IS REQUIRED FOR THESE SERVICES. Parking fees and city permits are not included and MUST be paid by the Tour Leader directly to the driver. The Tour Leader must take care of the meals for the driver.</td>
+                    <td class="details">Pick‐Up Frankfurt Airport Flight
+                       CI61 @14:45</td>
+                    <td>
+                        <div class="flex">
+                            <img src="assets/images/unlock-alt-solid.svg" width="15px" height="15px"/>
+                            <img src="assets/images/edit-regular (1) (copy).svg" width="15px" height="15px"/>
+                            <img src="assets/images/trash-alt-solid (1).svg" width="15px" height="15px"/>
+                            </div>
+                    </td>
+                   </tr>
+              </tbody>
+            </table>
+          </div>
+       
+          <div class="row" style="margin: 1% 1%">
+              <div class="col-8"></div>
+              <div class="col-2"><button class="btn-sec-copy">Copy</button></div>
+              <div class="col-2"><button class="btn-sec">Quote</button></div>
+            </div>
+      
+      </div>
+
+  <!-------------------------------------------------Quotation---------------------------------------------------------->    
+    
+  <div id="Quotation" class="tab" style="display:none">
+        <div class="container-fluid">
+          <div class="row" style="margin: 1% 6%"><b>Quotation Creation form</b>
+          </div>
+          <div class="row hr" style="margin: 1% 6%"></div>
+          <div class="row duration-table" style="margin: 1% 5%">
+            <table class="col-12" style="text-align: center;margin: 0 1%">
+              <thead>
+                <tr class="table-row1">
+                  <td width="210px">Agent</td>
+                  <td width="153px">PIC</td>
+                  <td>Duration</td>
+                  <td>Pattern 1</td>
+                  <td>Pattern 2</td>
+                  <td>Start</td>
+                  <td>End</td>
+                  <td>Departure</td>
+                  <td>Quoter</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-row2">
+                  <td>Quality</td>
+                  <td>Mrs.Plasom</td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>10 days</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>DE</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>SUM</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>FRA</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>BER</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>20JUL19 - 30SEP19</td>
+                  <td>Second Day</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row duration-table-manager" style="margin: 1% 5%">
+              <table class="col-12" style="text-align: center;margin: 0 1%">
+                <thead>
+                  <tr class="table-row1">
+                    <td width="210px">Validity</td>
+                    <td width="153px">Same Day Arrival  </td>
+                    <td>Master</td>
+                    <td colspan="6">Description</td>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row2">
+                    <td>Choose Period</td>
+                   
+                    <td>
+                      <select class="browser-default custom-select ">
+                        <option selected>Choose</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </td>
+                    <td >
+                      <select class="browser-default custom-select ">
+                        <option selected>Choose</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </td>
+                    <td colspan="6" width="450px">
+                      <textarea  placeholder="Provide detailed description here"></textarea>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="row" style="margin: 1% 6%">
+              <div class="col-8"></div>
+              <div class="col-2"><button class="btn-prim">Cancel</button></div>
+              <div class="col-2"><button class="btn-sec">Create</button></div>
+            </div>
+
+            <div class="row trash-edit" style="margin:0 4.7%;margin-top: 3%">
+              <div class="col-2">
+                <div class="rectangle">503401 - 01</div>
+              </div>
+              <div class="col-8"></div>
+              <div class="col-1 edit" >
+                <img src="assets/images/edit-regular (1).svg" width="20px" height="20px" />
+              </div>
+              <div class="col-1 trash" >
+                <img src="assets/images/trash-alt-solid (1).svg" width="20px" height="20px" />
+              </div>
+            </div>
+
+            <div class="row duration-table" style="margin: 0% 5%">
+              <table class="col-12" style="text-align: center;margin: 0 1%">
+                <thead>
+                  <tr class="table-row1">
+                    <td width="210px">Agent</td>
+                    <td width="153px">PIC</td>
+                    <td>Duration</td>
+                    <td>Pattern 1</td>
+                    <td>Pattern 2</td>
+                    <td>Start</td>
+                    <td>End</td>
+                    <td>Departure</td>
+                    <td>Quoter</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row2">
+                    <td>Quality</td>
+                    <td>Mrs.Plasom</td>
+                    <td>
+                      <select class="browser-default custom-select ">
+                        <option selected>10 days</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="browser-default custom-select ">
+                        <option selected>DE</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="browser-default custom-select ">
+                        <option selected>SUM</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="browser-default custom-select ">
+                        <option selected>FRA</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="browser-default custom-select ">
+                        <option selected>BER</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </td>
+                    <td>20JUL19 - 30SEP19</td>
+                    <td>Second Day</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+        </div>
+      </div>
+
+   <!---------------------------------------------------offer------------------------------------------------------------>  
+
+      <div id="Offer" class="tab" style="display:none">
+
+        <div class="container-fluid">
+
+          <div class="term-field"></div>
+
+          <div class="row" style="margin: 1% 5%"><b>Tour reference : test name</b></div>
+
+          <div class="term-header"><b>Terms</b></div>
+
+         <div class="term-body">
+            <label class="container">Print agent T&C
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Print holidays/events
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Print pictures
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Itinerary summary
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Trade fair list
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Parking Fees Included
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Driver’s Meal
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+            
+
+         </div>
+         <div class="row" style="margin: 2% 5%">
+          <div class="col-3"></div>
+          <div class="col-3"><button class="btn-sec-1">Preview</button></div>
+          <div class="col-3"><button class="btn-sec-2">Download Quotation</button></div>
+          <div class="col-3"><button class="btn-sec-2">Generate Quotation</button></div>
+        
+        </div>
+
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+   <!------------------------------------------pricing------------------------------------------------------------------->  
+
+      <div id="Pricing" class="tab">
+        <div class="container-fluid">
+          <div class="row trash-edit" style="margin:0 4.7%;margin-top: 3%">
+            <div class="col-2">
+              <div class="rectangle">503401 - 01</div>
+              <div class="rectangle-toggle">503401 - 02</div>
+            </div>
+            <div class="col-8"></div>
+            <div class="col-1 edit" style=" text-align: right;
+            margin-left:50px;
+            cursor:pointer">
+              <img src="assets/images/edit-regular (1).svg" width="20px" height="20px" />
+            </div>
+            <div class="col-1 trash" style=" text-align: right;
+            margin-left:-50px;
+            cursor:pointer">
+              <img src="assets/images/trash-alt-solid (1).svg" width="20px" height="20px" />
+            </div>
+          </div>
+          <div class="row duration-table" style="margin: 0% 5%">
+            <table class="col-12" style="text-align: center;margin: 0 1%">
+              <thead>
+                <tr class="table-row1">
+                  <td width="210px">Agent</td>
+                  <td width="153px">PIC</td>
+                  <td>Duration</td>
+                  <td>Pattern 1</td>
+                  <td>Pattern 2</td>
+                  <td>Start</td>
+                  <td>End</td>
+                  <td>Departure</td>
+                  <td>Quoter</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-row2">
+                  <td>Quality</td>
+                  <td>Mrs.Plasom</td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>10 days</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>DE</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>SUM</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>FRA</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="browser-default custom-select ">
+                      <option selected>BER</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </td>
+                  <td>20JUL19 - 30SEP19</td>
+                  <td>Second Day</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row" style="margin: 1% 6%"><b>Pricing list for : 503401 - 01</b>
+          </div>
+          <div class="row hr" style="margin: 1% 6%"></div>
+          <div class="row hotel" style="margin: 0% 6%;">
+            <div style="padding: 0% 8%;line-height: 50px;width: 100%;">
+              <div class="flex">
+                <div class="hotel-left-up"> <img src="assets/images/bed-solid.svg" /><span><b> Hotels</b></span></div>
+                <div class="hotel-right-up"> <img src="assets/images/angle-up-solid.svg" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="row acc-table" style="margin: 0 6%;margin-top: 1%">
+            <table class="col-12" style="text-align: center">
+              <thead class="parent">
+                <tr>
+                  <td rowspan="2" width="160px">Day</td>
+                  <td rowspan="2" width="160px">City</td>
+                  <td rowspan="2" width="160px">Hostel</td>
+                  <td colspan="2" style="text-align:center;border-bottom: 1px solid #cec6c6;">SINGLE</td>
+                  <td colspan="2" style="text-align:center;border-bottom: 1px solid #cec6c6;">TWIN</td>
+                  <td colspan="2" style="text-align:center;border-bottom: 1px solid #cec6c6;">TRIPLE</td>
+                  <td colspan="2" style="text-align:center;border-bottom: 1px solid #cec6c6;">TOTAL</td>
+                </tr>
+                <tr>
+                  <td>Pax</td>
+                  <td>Price</td>
+                  <td>Pax</td>
+                  <td>Price</td>
+                  <td>Pax</td>
+                  <td>Price</td>
+                  <td>Pax</td>
+                  <td>Price</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                </tr>
+                <tr>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                </tr>
+                <tr>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                  <td>Quality</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Porterage</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td></td>
+                  <td>SUB TOTAL</td>
+
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="footer-textbox"></div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="footer-textbox"></div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="footer-textbox"></div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="footer-textbox"></div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="row" style="margin:0% 6%;">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading even" role="tab" id="headingOne">
+                  <h4 class="panel-title flex">
+                    <div class="left-img">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        <img src="assets/images/badge.svg"/><span>FOC</span>
+                      </a>
+                    </div>
+                    <div class="down"><a role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <img src="assets/images/down.svg" />
+                      </a></div>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                    single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                    wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                    occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+                    them accusamus labore sustainable VHS.</div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading " role="tab" id="headingTwo">
+                  <h4 class="panel-title flex">
+                    <div class="left-img">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <img src="assets/images/bus-solid.svg" /> <span>Coaches</span>
+                      </a></div>
+                    <div class="down"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <img src="assets/images/down.svg" />
+                      </a></div>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                    si</a>ngle-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                    labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                    Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+                    heard of them accusamus labore sustainable VHS.</div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading even" role="tab" id="headingThree">
+                  <h4 class="panel-title flex">
+                    <div class="left-img">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <img src="assets/images/user.svg" /><span> Guides</span>
+                      </a></div>
+                    <div class="down"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        <img src="assets/images/down.svg" />
+                      </a></div>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                    single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                    wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                    occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+                    them accusamus labore sustainable VHS.</div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading " role="tab" id="headingFour">
+                  <h4 class="panel-title flex">
+                    <div class="left-img"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+                        aria-controls="collapseFour">
+                        <img src="assets/images/meal.svg" /><span> Meals</span>
+                      </a></div>
+                    <div class="down"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <img src="assets/images/down.svg" />
+                      </a></div>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                    single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                    wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                    occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+                    them accusamus labore sustainable VHS.</div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading even" role="tab" id="headingFive">
+                    <h4 class="panel-title flex">
+                      <div class="left-img"><a class="collapsed" role="button" data-toggle="collapse"
+                          data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+                          aria-controls="collapseFive">
+                          <img src="assets/images/building.svg" /><span> Entrance</span>
+                        </a></div>
+                      <div class="down"><a class="collapsed" role="button" data-toggle="collapse"
+                          data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+                          aria-controls="collapseFive">
+                          <img src="assets/images/down.svg" />
+                        </a></div>
+                    </h4>
+                  </div>
+                  <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFives">
+                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                      single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                      labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                      Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+                      haven't heard of them accusamus labore sustainable VHS.</div>
+                  </div>
+
+                  <div class="footer flex">
+                    <div>
+                      <p>Packages</p>
+                    </div>
+                    <div><img src="assets/images/down-white.svg" width="15px" height="15px" /></div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!------------------------------------pricinglist-end----------------------------------------------------------->  
+    </div>
+    </div>
+</body>
+
+</html>
